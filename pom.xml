@@ -14,19 +14,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jaxws-rt.version>2.3.0</jaxws-rt.version>
         <slf4j.version>1.7.25</slf4j.version>
         <log4j.version>2.9.0</log4j.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.sun.xml.ws</groupId>
-            <artifactId>jaxws-rt</artifactId>
-            <version>${jaxws-rt.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>

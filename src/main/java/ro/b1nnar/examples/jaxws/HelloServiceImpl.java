@@ -23,6 +23,9 @@ public class HelloServiceImpl implements HelloService {
     @Resource
     private WebServiceContext webServiceContext;
 
+    public HelloServiceImpl() {
+    }
+
     @PostConstruct
     public void postConstruct() {
         LOG.info("Post Construct");
