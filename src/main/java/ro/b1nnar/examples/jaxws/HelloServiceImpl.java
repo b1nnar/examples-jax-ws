@@ -2,6 +2,8 @@ package ro.b1nnar.examples.jaxws;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ro.b1nnar.examples.jaxws.types.SayHelloRequest;
+import ro.b1nnar.examples.jaxws.types.SayHelloResponse;
 import weblogic.jws.Policies;
 import weblogic.jws.Policy;
 
@@ -40,9 +42,12 @@ public class HelloServiceImpl implements HelloService {
     }
 
     @Override
-    public String sayHello(String name) {
-        LOG.info("sayHello for " + name);
+    public SayHelloResponse sayHello(SayHelloRequest sayHelloRequest) {
+        LOG.info("sayHello for " + sayHelloRequest.getName());
 
-        return "Hello, " + name + ".";
+        SayHelloResponse sayHelloResponse = new SayHelloResponse();
+        sayHelloResponse.setMessage("Hello, " + sayHelloRequest.getName() + ".");
+
+        return sayHelloResponse;
     }
 }
