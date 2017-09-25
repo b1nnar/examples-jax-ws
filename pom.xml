@@ -14,11 +14,27 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <weblogic.version>12.2.1.2</weblogic.version>
         <slf4j.version>1.7.25</slf4j.version>
         <log4j.version>2.9.0</log4j.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>weblogic</groupId>
+            <artifactId>weblogic</artifactId>
+            <scope>system</scope>
+            <systemPath>${env.WL_HOME}/server/lib/weblogic.jar</systemPath>
+            <version>${weblogic.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>weblogic</groupId>
+            <artifactId>ws-api</artifactId>
+            <scope>system</scope>
+            <systemPath>${env.MW_HOME}/oracle_common/modules/com.oracle.webservices.wls.wls-ws-api.jar</systemPath>
+            <version>${weblogic.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>

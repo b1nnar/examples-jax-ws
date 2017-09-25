@@ -2,6 +2,8 @@ package ro.b1nnar.examples.jaxws;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import weblogic.jws.Policies;
+import weblogic.jws.Policy;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -16,6 +18,7 @@ import javax.xml.ws.WebServiceContext;
         targetNamespace = "http://jaxws.examples.b1nnar.ro/",
         endpointInterface = "ro.b1nnar.examples.jaxws.HelloService"
 )
+@Policies({@Policy(uri = "policy:usernametoken.xml")})
 public class HelloServiceImpl implements HelloService {
 
     private static final Logger LOG = LoggerFactory.getLogger(HelloServiceImpl.class);
